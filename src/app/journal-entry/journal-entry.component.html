@@ -1,0 +1,34 @@
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile>
+            <div class="controls-container">
+                <input type="hidden" formControlName="$id">
+                <mat-form-field>
+                    <mat-label>Date*</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error>This field is required.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Account/Explanation</mat-label>
+                    <textarea matInput placeholder="..." formControlName="accounts"></textarea>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controls-container">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Debit</mat-label>
+                    <input type="number" matInput placeholder="10.0" formControlName="debit">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Credit</mat-label>
+                    <input type="number" matInput placeholder="10.0" formControlName="credit">
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <button mat-stroked-button type="submit" [disabled]="service.form.invalid">Add</button>
+    <button mat-stroked-button color="accent" type="reset">Clear</button>
+</form>

@@ -2,3 +2,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.normal-form { margin: 10px; }
+.controls-container { width: 100%; padding: 5%; }
+
+app-journal-entry { width: 100%; }
+
+.example-full-width {
+    width: 100%;
+}
